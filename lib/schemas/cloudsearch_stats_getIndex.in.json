@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "fromDate_day": {
+            "type": "integer"
+        },
+        "fromDate_month": {
+            "type": "integer"
+        },
+        "fromDate_year": {
+            "type": "integer"
+        },
+        "toDate_day": {
+            "type": "integer"
+        },
+        "toDate_month": {
+            "type": "integer"
+        },
+        "toDate_year": {
+            "type": "integer"
+        }
+    }
+}

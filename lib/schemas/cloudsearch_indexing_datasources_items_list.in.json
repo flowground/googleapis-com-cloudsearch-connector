@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "brief": {
+            "type": "boolean"
+        },
+        "connectorName": {
+            "type": "string"
+        },
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "pageSize": {
+            "type": "integer"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "debugOptions_enableDebugging": {
+            "type": "boolean"
+        }
+    }
+}

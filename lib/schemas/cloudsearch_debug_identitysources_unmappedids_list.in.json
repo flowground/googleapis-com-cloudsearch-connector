@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "properties": {
+        "pageSize": {
+            "type": "integer"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "parent": {
+            "required": true,
+            "type": "string"
+        },
+        "resolutionStatusCode": {
+            "type": "string",
+            "enum": [
+                "CODE_UNSPECIFIED",
+                "NOT_FOUND",
+                "IDENTITY_SOURCE_NOT_FOUND",
+                "IDENTITY_SOURCE_MISCONFIGURED",
+                "TOO_MANY_MAPPINGS_FOUND",
+                "INTERNAL_ERROR"
+            ]
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "debugOptions_enableDebugging": {
+            "type": "boolean"
+        }
+    }
+}

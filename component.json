@@ -1,0 +1,577 @@
+{
+    "title": "Cloud Search",
+    "description": "Cloud Search provides cloud-based search capabilities over G Suite data.  The Cloud Search API allows indexing of non-G Suite data into Cloud Search.",
+    "docsUrl": "https://gsuite.google.com/products/cloud-search/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/cloudsearch/v1/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://cloudsearch.googleapis.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "cloudsearch_debug_datasources_items_searchByViewUrl": {
+            "main": "./lib/actions/cloudsearch_debug_datasources_items_searchByViewUrl.js",
+            "title": "Fetches the item whose viewUrl exactly matches that of the URL provided\nin the request.",
+            "description": "Fetches the item whose viewUrl exactly matches that of the URL provided\nin the request.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_debug_datasources_items_searchByViewUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_debug_datasources_items_checkAccess": {
+            "main": "./lib/actions/cloudsearch_debug_datasources_items_checkAccess.js",
+            "title": "Checks whether an item is accessible by specified principal.",
+            "description": "Checks whether an item is accessible by specified principal.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_debug_datasources_items_checkAccess.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_debug_identitysources_items_listForunmappedidentity": {
+            "main": "./lib/actions/cloudsearch_debug_identitysources_items_listForunmappedidentity.js",
+            "title": "Lists names of items associated with an unmapped identity.",
+            "description": "Lists names of items associated with an unmapped identity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_debug_identitysources_items_listForunmappedidentity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_debug_identitysources_unmappedids_list": {
+            "main": "./lib/actions/cloudsearch_debug_identitysources_unmappedids_list.js",
+            "title": "Lists unmapped user identities for an identity source.",
+            "description": "Lists unmapped user identities for an identity source.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_debug_identitysources_unmappedids_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_indexing_datasources_items_delete": {
+            "main": "./lib/actions/cloudsearch_indexing_datasources_items_delete.js",
+            "title": "Deletes Item resource for the\nspecified resource name.",
+            "description": "Deletes Item resource for the\nspecified resource name.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_indexing_datasources_items_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_indexing_datasources_items_get": {
+            "main": "./lib/actions/cloudsearch_indexing_datasources_items_get.js",
+            "title": "Gets Item resource by item name.",
+            "description": "Gets Item resource by item name.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_indexing_datasources_items_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_indexing_datasources_items_list": {
+            "main": "./lib/actions/cloudsearch_indexing_datasources_items_list.js",
+            "title": "Lists all or a subset of Item resources.",
+            "description": "Lists all or a subset of Item resources.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_indexing_datasources_items_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_indexing_datasources_items_deleteQueueItems": {
+            "main": "./lib/actions/cloudsearch_indexing_datasources_items_deleteQueueItems.js",
+            "title": "Deletes all items in a queue. This method is useful for deleting stale\nitems.",
+            "description": "Deletes all items in a queue. This method is useful for deleting stale\nitems.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_indexing_datasources_items_deleteQueueItems.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_indexing_datasources_items_poll": {
+            "main": "./lib/actions/cloudsearch_indexing_datasources_items_poll.js",
+            "title": "Polls for unreserved items from the indexing queue and marks a\nset as reserved, starting with items that have\nthe oldest timestamp from the highest priority\nItemStatus.\nThe priority order is as follows: <br />\nERROR\n<br />\nMODIFIED\n<br />\nNEW_ITEM\n<br />\nACCEPTED\n<br />\nReserving items ensures that polling from other threads\ncannot create overlapping sets.\n\nAfter handling the reserved items, the client should put items back\ninto the unreserved state, either by calling\nindex,\nor by calling\npush with\nthe type REQUEUE.\n\nItems automatically become available (unreserved) after 4 hours even if no\nupdate or push method is called.",
+            "description": "Polls for unreserved items from the indexing queue and marks a\nset as reserved, starting with items that have\nthe oldest timestamp from the highest priority\nItemStatus.\nThe priority order is as follows: <br />\nERROR\n<br />\nMODIFIED\n<br />\nNEW_ITEM\n<br />\nACCEPTED\n<br />\nReserving items ensures that polling from other threads\ncannot create overlapping sets.\n\nAfter handling the reserved items, the client should put items back\ninto the unreserved state, either by calling\nindex,\nor by calling\npush with\nthe type REQUEUE.\n\nItems automatically become available (unreserved) after 4 hours even if no\nupdate or push method is called.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_indexing_datasources_items_poll.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_indexing_datasources_items_unreserve": {
+            "main": "./lib/actions/cloudsearch_indexing_datasources_items_unreserve.js",
+            "title": "Unreserves all items from a queue, making them all eligible to be\npolled.  This method is useful for resetting the indexing queue\nafter a connector has been restarted.",
+            "description": "Unreserves all items from a queue, making them all eligible to be\npolled.  This method is useful for resetting the indexing queue\nafter a connector has been restarted.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_indexing_datasources_items_unreserve.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_indexing_datasources_deleteSchema": {
+            "main": "./lib/actions/cloudsearch_indexing_datasources_deleteSchema.js",
+            "title": "Deletes the schema of a data source.",
+            "description": "Deletes the schema of a data source.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_indexing_datasources_deleteSchema.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_indexing_datasources_getSchema": {
+            "main": "./lib/actions/cloudsearch_indexing_datasources_getSchema.js",
+            "title": "Gets the schema of a data source.",
+            "description": "Gets the schema of a data source.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_indexing_datasources_getSchema.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_indexing_datasources_updateSchema": {
+            "main": "./lib/actions/cloudsearch_indexing_datasources_updateSchema.js",
+            "title": "Updates the schema of a data source.",
+            "description": "Updates the schema of a data source.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_indexing_datasources_updateSchema.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_indexing_datasources_items_index": {
+            "main": "./lib/actions/cloudsearch_indexing_datasources_items_index.js",
+            "title": "Updates Item ACL, metadata, and\ncontent. It will insert the Item if it\ndoes not exist.\nThis method does not support partial updates.  Fields with no provided\nvalues are cleared out in the Cloud Search index.",
+            "description": "Updates Item ACL, metadata, and\ncontent. It will insert the Item if it\ndoes not exist.\nThis method does not support partial updates.  Fields with no provided\nvalues are cleared out in the Cloud Search index.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_indexing_datasources_items_index.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_indexing_datasources_items_push": {
+            "main": "./lib/actions/cloudsearch_indexing_datasources_items_push.js",
+            "title": "Pushes an item onto a queue for later polling and updating.",
+            "description": "Pushes an item onto a queue for later polling and updating.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_indexing_datasources_items_push.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_indexing_datasources_items_upload": {
+            "main": "./lib/actions/cloudsearch_indexing_datasources_items_upload.js",
+            "title": "Creates an upload session for uploading item content. For items smaller\nthan 100 KiB, it's easier to embed the content\ninline within\nupdate.",
+            "description": "Creates an upload session for uploading item content. For items smaller\nthan 100 KiB, it's easier to embed the content\ninline within\nupdate.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_indexing_datasources_items_upload.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_media_upload": {
+            "main": "./lib/actions/cloudsearch_media_upload.js",
+            "title": "Uploads media for indexing.\n\nThe upload endpoint supports direct and resumable upload protocols and\nis intended for large items that can not be inlined during index requests. To\nindex large content:\n\n1. Call upload to begin\n   a session and get the item reference.\n1. Upload the content using the item reference's resource name.\n1. Call index with the item\n   reference as the content.\n\nFor additional information, see\n[Create a content connector using the REST API](https://developers.google.com/cloud-search/docs/guides/content-connector#rest).",
+            "description": "Uploads media for indexing.\n\nThe upload endpoint supports direct and resumable upload protocols and\nis intended for large items that can not be inlined during index requests. To\nindex large content:\n\n1. Call upload to begin\n   a session and get the item reference.\n1. Upload the content using the item reference's resource name.\n1. Call index with the item\n   reference as the content.\n\nFor additional information, see\n[Create a content connector using the REST API](https://developers.google.com/cloud-search/docs/guides/content-connector#rest).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_media_upload.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_query_search": {
+            "main": "./lib/actions/cloudsearch_query_search.js",
+            "title": "The Cloud Search Query API provides the search method, which returns\nthe most relevant results from a user query.  The results can come from\nG Suite Apps, such as Gmail or Google Drive, or they can come from data\nthat you have indexed from a third party.",
+            "description": "The Cloud Search Query API provides the search method, which returns\nthe most relevant results from a user query.  The results can come from\nG Suite Apps, such as Gmail or Google Drive, or they can come from data\nthat you have indexed from a third party.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_query_search.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_query_sources_list": {
+            "main": "./lib/actions/cloudsearch_query_sources_list.js",
+            "title": "Returns list of sources that user can use for Search and Suggest APIs.",
+            "description": "Returns list of sources that user can use for Search and Suggest APIs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_query_sources_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_query_suggest": {
+            "main": "./lib/actions/cloudsearch_query_suggest.js",
+            "title": "Provides suggestions for autocompleting the query.",
+            "description": "Provides suggestions for autocompleting the query.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_query_suggest.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_settings_datasources_list": {
+            "main": "./lib/actions/cloudsearch_settings_datasources_list.js",
+            "title": "Lists datasources.",
+            "description": "Lists datasources.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_settings_datasources_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_settings_datasources_create": {
+            "main": "./lib/actions/cloudsearch_settings_datasources_create.js",
+            "title": "Creates a datasource.",
+            "description": "Creates a datasource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_settings_datasources_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_settings_searchapplications_list": {
+            "main": "./lib/actions/cloudsearch_settings_searchapplications_list.js",
+            "title": "Lists all search applications.",
+            "description": "Lists all search applications.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_settings_searchapplications_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_settings_searchapplications_create": {
+            "main": "./lib/actions/cloudsearch_settings_searchapplications_create.js",
+            "title": "Creates a search application.",
+            "description": "Creates a search application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_settings_searchapplications_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_settings_searchapplications_delete": {
+            "main": "./lib/actions/cloudsearch_settings_searchapplications_delete.js",
+            "title": "Deletes a search application.",
+            "description": "Deletes a search application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_settings_searchapplications_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_settings_searchapplications_get": {
+            "main": "./lib/actions/cloudsearch_settings_searchapplications_get.js",
+            "title": "Gets the specified search application.",
+            "description": "Gets the specified search application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_settings_searchapplications_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_settings_searchapplications_update": {
+            "main": "./lib/actions/cloudsearch_settings_searchapplications_update.js",
+            "title": "Updates a search application.",
+            "description": "Updates a search application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_settings_searchapplications_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_settings_searchapplications_reset": {
+            "main": "./lib/actions/cloudsearch_settings_searchapplications_reset.js",
+            "title": "Resets a search application to default settings. This will return an empty\nresponse.",
+            "description": "Resets a search application to default settings. This will return an empty\nresponse.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_settings_searchapplications_reset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_stats_getIndex": {
+            "main": "./lib/actions/cloudsearch_stats_getIndex.js",
+            "title": "Gets indexed item statistics aggreggated across all data sources.",
+            "description": "Gets indexed item statistics aggreggated across all data sources.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_stats_getIndex.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_stats_index_datasources_get": {
+            "main": "./lib/actions/cloudsearch_stats_index_datasources_get.js",
+            "title": "Gets indexed item statistics for a single data source.",
+            "description": "Gets indexed item statistics for a single data source.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_stats_index_datasources_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudsearch_operations_get": {
+            "main": "./lib/actions/cloudsearch_operations_get.js",
+            "title": "Gets the latest state of a long-running operation.  Clients can use this\nmethod to poll the operation result at intervals as recommended by the API\nservice.",
+            "description": "Gets the latest state of a long-running operation.  Clients can use this\nmethod to poll the operation result at intervals as recommended by the API\nservice.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudsearch_operations_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

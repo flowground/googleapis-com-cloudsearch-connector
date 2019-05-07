@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "pageToken": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "requestOptions_debugOptions_enableDebugging": {
+            "type": "boolean"
+        },
+        "requestOptions_languageCode": {
+            "type": "string"
+        },
+        "requestOptions_searchApplicationId": {
+            "type": "string"
+        },
+        "requestOptions_timeZone": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "type": "object",
+    "properties": {
+        "access_token": {
+            "type": "string"
+        },
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json",
+                "media",
+                "proto"
+            ],
+            "default": "json"
+        },
+        "callback": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Frontend protos implement autoconverters for this message type. If you add\nfields to this proto, please add corresponding fields to the frontend proto\nwith the same names.\nLINT.IfChange",
+            "properties": {
+                "disableModifications": {
+                    "description": "If true, Indexing API rejects any modification calls to this datasource\nsuch as create, update, and delete.\nDisabling this does not imply halting process of previously\naccepted data.",
+                    "type": "boolean"
+                },
+                "disableServing": {
+                    "description": "Disable serving any search or assist results.",
+                    "type": "boolean"
+                },
+                "displayName": {
+                    "description": "Required. Display name of the datasource\nThe maximum length is 300 characters.",
+                    "type": "string"
+                },
+                "indexingServiceAccounts": {
+                    "description": "List of service accounts that have indexing access.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "itemsVisibility": {
+                    "description": "This field restricts visibility to items at the datasource level. Items\nwithin the datasource are restricted to the union of users and groups\nincluded in this field. Note that, this does not ensure access to a\nspecific item, as users need to have ACL permissions on the contained\nitems. This ensures a high level access on the entire datasource, and\nthat the individual items are not shared outside this visibility.",
+                    "items": {
+                        "properties": {
+                            "gsuiteDomain": {
+                                "description": "This principal represents all users of the G Suite domain of the\ncustomer.",
+                                "type": "boolean"
+                            },
+                            "gsuiteGroupEmail": {
+                                "description": "This principal references a G Suite group account",
+                                "type": "string"
+                            },
+                            "gsuiteUserEmail": {
+                                "description": "This principal references a G Suite user account",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "description": "Name of the datasource resource.\nFormat: datasources/{source_id}.\n<br />The name is ignored when creating a datasource.",
+                    "type": "string"
+                },
+                "operationIds": {
+                    "description": "IDs of the Long Running Operations (LROs) currently running for this schema.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "shortName": {
+                    "description": "A short name or alias for the source.  This value will be used to match the\n'source' operator. For example, if the short name is *&lt;value&gt;* then\nqueries like *source:&lt;value&gt;* will only return results for this\nsource. The value must be unique across all datasources. The value must\nonly contain alphanumeric characters (a-zA-Z0-9). The value cannot start\nwith 'google' and cannot be one of the following: mail, gmail, docs, drive,\ngroups, sites, calendar, hangouts, gplus, keep, people, teams.\nIts maximum length is 32 characters.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "__xgafv": {
+            "type": "string",
+            "enum": [
+                "1",
+                "2"
+            ]
+        }
+    }
+}

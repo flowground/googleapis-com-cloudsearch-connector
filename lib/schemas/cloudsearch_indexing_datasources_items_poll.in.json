@@ -1,0 +1,88 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "access_token": {
+            "type": "string"
+        },
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json",
+                "media",
+                "proto"
+            ],
+            "default": "json"
+        },
+        "callback": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "connectorName": {
+                    "description": "Name of connector making this call.\n<br />Format: datasources/{source_id}/connectors/{ID}",
+                    "type": "string"
+                },
+                "debugOptions": {
+                    "description": "Common debug options.",
+                    "properties": {
+                        "enableDebugging": {
+                            "description": "If set, the request will enable debugging features of Cloud Search.\nOnly turn on this field, if asked by Google to help with debugging.",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "limit": {
+                    "description": "Maximum number of items to return.\n<br />The maximum and the default value is 1000",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "queue": {
+                    "description": "Queue name to fetch items from.  If unspecified, PollItems will\nfetch from 'default' queue.\nThe maximum length is 100 characters.",
+                    "type": "string"
+                },
+                "statusCodes": {
+                    "description": "Limit the items polled to the ones with these statuses.",
+                    "items": {
+                        "enum": [
+                            "CODE_UNSPECIFIED",
+                            "ERROR",
+                            "MODIFIED",
+                            "NEW_ITEM",
+                            "ACCEPTED"
+                        ],
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

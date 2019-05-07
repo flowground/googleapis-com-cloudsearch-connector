@@ -1,0 +1,134 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "access_token": {
+            "type": "string"
+        },
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json",
+                "media",
+                "proto"
+            ],
+            "default": "json"
+        },
+        "callback": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "connectorName": {
+                    "description": "Name of connector making this call.\n<br />Format: datasources/{source_id}/connectors/{ID}",
+                    "type": "string"
+                },
+                "debugOptions": {
+                    "description": "Common debug options.",
+                    "properties": {
+                        "enableDebugging": {
+                            "description": "If set, the request will enable debugging features of Cloud Search.\nOnly turn on this field, if asked by Google to help with debugging.",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "item": {
+                    "description": "Item to push onto the queue.",
+                    "properties": {
+                        "contentHash": {
+                            "description": "Content hash of the item according to the repository. If specified, this is\nused to determine how to modify this\nitem's status. Setting this field and the\ntype field results in argument\nerror.\nThe maximum length is 2048 characters.",
+                            "type": "string"
+                        },
+                        "metadataHash": {
+                            "description": "Metadata hash of the item according to the repository. If specified, this\nis used to determine how to modify this\nitem's status. Setting this field and the\ntype field results in argument\nerror.\nThe maximum length is 2048 characters.",
+                            "type": "string"
+                        },
+                        "payload": {
+                            "description": "Provides additional document state information for the connector,\nsuch as an alternate repository ID and other metadata.\nThe maximum length is 8192 bytes.",
+                            "format": "byte",
+                            "type": "string"
+                        },
+                        "queue": {
+                            "description": "Queue to which this item belongs to.  The <code>default</code> queue is\nchosen if this field is not specified. The maximum length is\n512 characters.",
+                            "type": "string"
+                        },
+                        "repositoryError": {
+                            "description": "Populate this field to store Connector or repository error details.\nThis information is displayed in the Admin Console.\nThis field may only be populated when the\nType is\nREPOSITORY_ERROR.",
+                            "properties": {
+                                "errorMessage": {
+                                    "description": "Message that describes the error. The maximum allowable length\nof the message is 8192 characters.",
+                                    "type": "string"
+                                },
+                                "httpStatusCode": {
+                                    "description": "Error codes.  Matches the definition of HTTP status codes.",
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "type": {
+                                    "description": "Type of error.",
+                                    "enum": [
+                                        "UNKNOWN",
+                                        "NETWORK_ERROR",
+                                        "DNS_ERROR",
+                                        "CONNECTION_ERROR",
+                                        "AUTHENTICATION_ERROR",
+                                        "AUTHORIZATION_ERROR",
+                                        "SERVER_ERROR",
+                                        "QUOTA_EXCEEDED",
+                                        "SERVICE_UNAVAILABLE",
+                                        "CLIENT_ERROR"
+                                    ],
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "structuredDataHash": {
+                            "description": "Structured data hash of the item according to the repository. If specified,\nthis is used to determine how to modify this item's status. Setting this\nfield and the type field\nresults in argument error.\nThe maximum length is 2048 characters.",
+                            "type": "string"
+                        },
+                        "type": {
+                            "description": "The type of the push operation that defines the push behavior.",
+                            "enum": [
+                                "UNSPECIFIED",
+                                "MODIFIED",
+                                "NOT_MODIFIED",
+                                "REPOSITORY_ERROR",
+                                "REQUEUE"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
