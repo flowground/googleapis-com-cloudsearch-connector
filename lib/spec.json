@@ -11933,7 +11933,7 @@
                 "description": "Oauth 2.0 authentication",
                 "type": "oauth2",
                 "flows": {
-                    "implicit": {
+                    "authorizationCode": {
                         "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
                         "scopes": {
                             "https://www.googleapis.com/auth/cloud_search": "Index and serve your organization's data with Cloud Search",
@@ -11945,7 +11945,8 @@
                             "https://www.googleapis.com/auth/cloud_search.settings.query": "New Service: https://www.googleapis.com/auth/cloud_search.settings.query",
                             "https://www.googleapis.com/auth/cloud_search.stats": "New Service: https://www.googleapis.com/auth/cloud_search.stats",
                             "https://www.googleapis.com/auth/cloud_search.stats.indexing": "New Service: https://www.googleapis.com/auth/cloud_search.stats.indexing"
-                        }
+                        },
+                        "tokenUrl": "https://www.googleapis.com/oauth2/v4/token"
                     }
                 }
             }
